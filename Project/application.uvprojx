@@ -427,9 +427,43 @@
         </Group>
         <Group>
           <GroupName>Drv</GroupName>
+          <Files>
+            <File>
+              <FileName>drv_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drv\drv_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drv\drv_timer.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Hal</GroupName>
+          <Files>
+            <File>
+              <FileName>hal_interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hal\hal_interrupt.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hal\hal_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_cms32l051.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hal\hal_cms32l051.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hal\hal_timer.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

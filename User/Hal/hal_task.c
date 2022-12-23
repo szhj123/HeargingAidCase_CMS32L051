@@ -1,5 +1,5 @@
 /********************************************************
-* @file       main.c
+* @file       hal_task.c
 * @author     szhj13
 * @version    V1.0
 * @date       2022-05-18
@@ -10,23 +10,31 @@
 **********************************************************/
 
 /* Includes ---------------------------------------------*/
-#include "drv_task.h"
-#include "drv_timer.h"
+#include "hal_task.h"
 /* Private typedef --------------------------------------*/
 /* Private define ---------------------------------------*/
 /* Private macro ----------------------------------------*/
 /* Private function -------------------------------------*/
 /* Private variables ------------------------------------*/
+static hal_isr_callback_t task_isr_callback = NULL;
 
-int main(void )
+void Hal_Task_Init(void )
 {
-    Drv_Task_Init();
+    SystemCoreClockUpdate();
 
-    Drv_Timer_Init();
-    
-	while(1)
-	{
-        Drv_Task_Scheduler();
-	}
+    SysTick_Config(SystemCoreClock/1000);
+}
+
+void Hal_Task_Regist_Isr_Callback(hal_isr_callback_t callback )
+{
+    task_isr_callback = callback;
+}
+
+void Hal_Task_Isr_Handler(void )
+{
+    if(task_isr_callback != NULL)
+    {
+        task_isr_callback();
+    }
 }
 
