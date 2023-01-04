@@ -1,5 +1,5 @@
 /********************************************************
-* @file       main.c
+* @file       hal_battery.c
 * @author     szhj13
 * @version    V1.0
 * @date       2022-05-18
@@ -10,27 +10,20 @@
 **********************************************************/
 
 /* Includes ---------------------------------------------*/
-#include "drv_task.h"
-#include "drv_timer.h"
-
-#include "app_battery.h"
+#include "hal_battery.h"
 /* Private typedef --------------------------------------*/
 /* Private define ---------------------------------------*/
 /* Private macro ----------------------------------------*/
 /* Private function -------------------------------------*/
 /* Private variables ------------------------------------*/
 
-int main(void )
+void Hal_Batt_Init(void )
 {
-    Drv_Task_Init();
+    Adc_Init();
+}
 
-    Drv_Timer_Init();
-
-    App_Batt_Init();
-    
-	while(1)
-	{
-        Drv_Task_Scheduler();
-	}
+uint16_t Hal_Batt_Get_AdcVal(adc_channel_t channel )
+{
+    return Adc_Get_Val(channel);
 }
 

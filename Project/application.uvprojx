@@ -413,6 +413,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\src\gpio.c</FilePath>
             </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\src\adc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -422,6 +427,11 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\App\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_battery.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\App\app_battery.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -437,6 +447,11 @@
               <FileName>drv_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Drv\drv_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_battery.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drv\drv_battery.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -462,6 +477,11 @@
               <FileName>hal_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hal\hal_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_battery.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hal\hal_battery.c</FilePath>
             </File>
           </Files>
         </Group>

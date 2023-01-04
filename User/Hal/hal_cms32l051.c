@@ -17,6 +17,7 @@
 /* Private macro ----------------------------------------*/
 /* Private function -------------------------------------*/
 /* Private variables ------------------------------------*/
+uint16_t adcTmpBuf[32];
 
 void Gpio_Init(void )
 {
@@ -44,5 +45,17 @@ void Tim40_Interval_Init(void )
     INTC_EnableIRQ(TM00_IRQn);
 
     TM40->TS0 |= TM4_CHANNEL_0;
+}
+
+void Adc_Init(void )
+{
+    ADC_Init();
+}
+
+uint16_t Adc_Get_Val(adc_channel_t  channel )
+{
+    ADC_Converse(channel, sizeof(adcTmpBuf)/sizeof(uint16_t ), adcTmpBuf);
+
+    return ADC_MidAvg_Filter(adcTmpBuf, sizeof(adcTmpBuf)/sizeof(uint16_t ));
 }
 

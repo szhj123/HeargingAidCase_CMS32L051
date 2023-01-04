@@ -1,5 +1,5 @@
 /********************************************************
-* @file       main.c
+* @file       app_battery.c
 * @author     szhj13
 * @version    V1.0
 * @date       2022-05-18
@@ -10,9 +10,6 @@
 **********************************************************/
 
 /* Includes ---------------------------------------------*/
-#include "drv_task.h"
-#include "drv_timer.h"
-
 #include "app_battery.h"
 /* Private typedef --------------------------------------*/
 /* Private define ---------------------------------------*/
@@ -20,17 +17,12 @@
 /* Private function -------------------------------------*/
 /* Private variables ------------------------------------*/
 
-int main(void )
+void App_Batt_Init(void )
 {
-    Drv_Task_Init();
+    static uint16_t vccVol;
 
-    Drv_Timer_Init();
+    Drv_Batt_Init();
 
-    App_Batt_Init();
-    
-	while(1)
-	{
-        Drv_Task_Scheduler();
-	}
+    vccVol = Drv_Batt_Get_Vol();
 }
 
