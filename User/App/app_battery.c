@@ -10,12 +10,15 @@
 **********************************************************/
 
 /* Includes ---------------------------------------------*/
+#include "drv_task.h"
+
 #include "app_battery.h"
 /* Private typedef --------------------------------------*/
 /* Private define ---------------------------------------*/
 /* Private macro ----------------------------------------*/
 /* Private function -------------------------------------*/
 /* Private variables ------------------------------------*/
+batt_para_t battPara;
 
 void App_Batt_Init(void )
 {
@@ -23,6 +26,10 @@ void App_Batt_Init(void )
 
     Drv_Batt_Init();
 
-    vccVol = Drv_Batt_Get_Vol();
+    battPara.battVol = Drv_Batt_Get_Vol();
+    
+    battPara.preBattVol = battPara.battVol;
+
+    
 }
 

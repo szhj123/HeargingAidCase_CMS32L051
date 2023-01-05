@@ -21,6 +21,28 @@ uint16_t adcTmpBuf[32];
 
 void Gpio_Init(void )
 {
+    //p136, hall detect, input
+    PORT_Init(PORT13, PIN6, PULLUP_INPUT);
+    //p124, led2, output
+    //p123, led1, output
+    //p122,
+    //p121, usb detect, input    
+    PORT_Init(PORT12, PIN4, OUTPUT);
+    PORT_Init(PORT12, PIN3, OUTPUT);
+    PORT_Init(PORT12, PIN1, INPUT);
+    //p23, charge stat, input
+    PORT_Init(PORT2, PIN3, PULLUP_INPUT);
+    //p14, led3, output
+    //p13, led4, output
+    //p12, tx, output
+    //p11, uv led, output
+    //p10, en boost, output
+    PORT_Init(PORT1, PIN4, OUTPUT);
+    PORT_Init(PORT1, PIN3, OUTPUT);
+    PORT_Init(PORT1, PIN2, OUTPUT);
+    PORT_Init(PORT1, PIN1, OUTPUT);
+    PORT_Init(PORT1, PIN0, OUTPUT);
+    PORT_Init(PORT12, PIN1, INPUT);
 }
 
 void Tim40_Interval_Init(void )
