@@ -1260,9 +1260,9 @@ typedef enum
 }while(0)
 #else
 #define INTP0_PORT_SETTING() do{ \
-        PORT->INTP0PCFG = 0x0e;     /* allocate INTP0 to P23 */ \
-        PORT->PM2  |=  (1 << 3);   /* P23 is used as INTP0 input */ \
-        PORT->PMC2 &= ~(1 << 3);   /* P23 digital function */ \
+        PORT->INTP0PCFG = 0x29;    /* allocate INTP0 to P136 */ \
+        PORT->PM13  |=  (1 << 6);   /* P23 is used as INTP0 input */ \
+        PORT->PMC13 &= ~(1 << 6);   /* P23 digital function */ \
 }while(0)
 
 #endif 

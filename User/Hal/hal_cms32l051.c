@@ -45,6 +45,17 @@ void Gpio_Init(void )
     PORT_Init(PORT12, PIN1, INPUT);
 }
 
+void Gpio_Interrupt_Init(void )
+{
+    //p136, hall detect, intp0
+    INTP_Init(1 << 0, INTP_BOTH);
+    //p121, usb detect, intp1
+    INTP_Init(1 << 1, INTP_BOTH);
+
+    INTP_Start(1 << 0);
+    INTP_Start(1 << 1);
+}
+
 void Tim40_Interval_Init(void )
 {
     SystemCoreClockUpdate();

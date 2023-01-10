@@ -14,6 +14,9 @@
 #include "drv_timer.h"
 
 #include "app_battery.h"
+#include "app_event.h"
+#include "app_case.h"
+#include "app_led.h"
 /* Private typedef --------------------------------------*/
 /* Private define ---------------------------------------*/
 /* Private macro ----------------------------------------*/
@@ -26,9 +29,15 @@ int main(void )
 
     Drv_Timer_Init();
 
+    App_Event_Init();
+
     App_Batt_Init();
-    
-	while(1)
+
+    App_Case_Init();
+
+    App_Led_Init();
+
+  	while(1)
 	{
         Drv_Task_Scheduler();
 	}

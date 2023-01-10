@@ -418,6 +418,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\src\adc.c</FilePath>
             </File>
+            <File>
+              <FileName>intp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\src\intp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -432,6 +437,21 @@
               <FileName>app_battery.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\App\app_battery.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_event.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\App\app_event.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\App\app_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_case.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\App\app_case.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -452,6 +472,21 @@
               <FileName>drv_battery.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Drv\drv_battery.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_event.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drv\drv_event.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drv\drv_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_case.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Drv\drv_case.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -482,6 +517,16 @@
               <FileName>hal_battery.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hal\hal_battery.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hal\hal_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>hal_case.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hal\hal_case.c</FilePath>
             </File>
           </Files>
         </Group>

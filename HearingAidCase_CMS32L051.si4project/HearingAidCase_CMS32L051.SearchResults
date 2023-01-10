@@ -1,0 +1,5 @@
+---- unbattChgState Matches (4 in 2 files) ----
+App_Usb_Plug_Handler in app_battery.c (User\App) :         battPara.unbattChgState = BATT_UNCHG_INIT;
+App_Batt_Uncharge_Handler in app_battery.c (User\App) :     switch(battPara.unbattChgState)
+App_Batt_Uncharge_Handler in app_battery.c (User\App) :             battPara.unbattChgState = BATT_UNCHG_PROCESS;
+_batt_para_t in app_battery.h (User\App) :     batt_unchg_state_t unbattChgState;
