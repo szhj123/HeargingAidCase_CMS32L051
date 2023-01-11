@@ -11,13 +11,10 @@
 
 /* Includes ---------------------------------------------*/
 #include "app_led.h"
-#include "app_case.h"
-#include "app_battery.h"
 /* Private typedef --------------------------------------*/
 /* Private define ---------------------------------------*/
 /* Private macro ----------------------------------------*/
 /* Private function -------------------------------------*/
-static void App_Led_UV_Handler(void *arg );
 static void App_Led_Flash(void *arg );
 /* Private variables ------------------------------------*/
 led_para_t ledPara;
@@ -50,65 +47,13 @@ led_ctrl_block_t led4 =
     .id   = 4
 };
 
-led_ctrl_block_t ledUv = 
-{
-    .port = PORT1,
-    .pin  = PIN1,
-    .id   = 5
-};
-
-
 void App_Led_Init(void )
 {
     Drv_Led_Init();
 
     App_Led_All_Off();
 
-    Drv_Task_Regist_Period(App_Led_UV_Handler, 0, 1, NULL);
-
     ledPara.timer = TIMER_NULL;
-
-    ledPara.timerUV = TIMER_NULL;
-}
-
-static void App_Led_UV_Light_Callback(void *arg )
-{
-    Drv_Led_Off(&ledUv);
-}
-
-static void App_Led_UV_Handler(void *arg )
-{    
-    if(App_Usb_Get_State() == USB_STATE_PLUG_IN && App_Case_Get_State() == CASE_STATE_CLOSE)
-    {
-        if(!ledPara.sterilizeFlag)
-        {
-            if(ledPara.timerUV != TIMER_NULL)
-            {
-                Drv_Timer_Delete(ledPara.timerUV);
-                
-                ledPara.timerUV = TIMER_NULL;
-            }
-
-            Drv_Led_On(&ledUv);
-
-            ledPara.timerUV = Drv_Timer_Regist_Oneshot(App_Led_UV_Light_Callback, 30000, NULL);
-
-            ledPara.sterilizeFlag = 1;
-        }
-    }
-    else
-    {
-        if(ledPara.timerUV != TIMER_NULL)
-        {
-            Drv_Timer_Delete(ledPara.timerUV);
-            
-            ledPara.timerUV = TIMER_NULL;
-        }
-
-        ledPara.sterilizeFlag = 0;
-
-        Drv_Led_Off(&ledUv);
-    }
 }
 
 void App_Led_All_Off(void )

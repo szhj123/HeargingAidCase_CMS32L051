@@ -61,6 +61,10 @@ static void App_Event_Handler(void *arg )
             {
                 case EARBUD_CHG_STATE_PROCESS:
                 {
+                    if(App_Usb_Get_State() == USB_STATE_PLUG_OUT)
+                    {
+                        App_Led_Bat_Unchg(App_Batt_Get_Chg_State());
+                    }
                     break;
                 }
                 case EARBUD_CHG_STATE_DONE:

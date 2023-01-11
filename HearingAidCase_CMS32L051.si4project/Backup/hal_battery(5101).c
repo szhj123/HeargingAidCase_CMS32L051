@@ -48,16 +48,6 @@ uint8_t Hal_Batt_Get_Chg_State(void )
     return PORT_GetBit(PORT2, PIN3);
 }
 
-void Hal_Batt_Boost_On(void )
-{
-    PORT_SetBit(PORT1, PIN0);
-}
-
-void Hal_Batt_Boost_Off(void )
-{
-    PORT_ClrBit(PORT1, PIN0);
-}
-
 void Hal_Usb_Plug_Isr_Handler(void )
 {
     if(usb_plug_isr_callback != NULL)

@@ -5,9 +5,9 @@
 #include "drv_battery.h"
 
 #define BATT_VOL_0                3200
-#define BATT_VOL_25               3520
-#define BATT_VOL_50               3720
-#define BATT_VOL_75               3920
+#define BATT_VOL_25               3620
+#define BATT_VOL_50               3820
+#define BATT_VOL_75               3950
 #define BATT_VOL_100              4120
 
 typedef enum _batt_chg_state_t
@@ -59,6 +59,7 @@ typedef struct _batt_para_t
     earbud_chg_state_t preEarbudChgState;
     batt_level_t battLevel;
     batt_level_t preBattLevel;
+
 }batt_para_t;
 
 void App_Batt_Init(void );
@@ -67,6 +68,8 @@ batt_level_t App_Batt_Get_Chg_State(void );
 earbud_chg_state_t App_Earbud_Cal_Chg_State(uint16_t earbudCur );
 earbud_chg_state_t App_Earbud_Get_Chg_State(void );
 uint8_t App_Usb_Get_State(void );
+void App_Batt_Boost_On(void );
+void App_Batt_Boost_Off(void );
 
 #endif 
 

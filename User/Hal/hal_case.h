@@ -5,6 +5,8 @@
 
 void Hal_Case_Init(hal_isr_callback_t callback );
 uint8_t Hal_Hall_Get_State(void );
+void Hal_Com_Set_Gpio_High(void );
+void Hal_Com_Set_Gpio_Low(void );
 void Hal_Hall_Isr_Handler(void );
 
 #endif 

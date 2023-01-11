@@ -13,9 +13,5 @@ uint16_t Drv_Earbud_Get_Cur(void );
 uint8_t Drv_Usb_Get_State(void );
 uint8_t Drv_Batt_Get_Chg_State(void );
 
-void Drv_Batt_Boost_On(void );
-void Drv_Batt_Boost_Off(void );
-
-
 #endif 
 

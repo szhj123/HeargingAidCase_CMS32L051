@@ -4,11 +4,14 @@
 #include "app_battery.h"
 
 #include "drv_led.h"
+#include "drv_task.h"
 #include "drv_timer.h"
 
 typedef struct _led_para_t
 {
     uint8_t timer;
+    uint8_t timerUV;
+    uint8_t sterilizeFlag;
     uint16_t delayCnt;
     
 }led_para_t;

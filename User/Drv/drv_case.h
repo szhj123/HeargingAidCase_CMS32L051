@@ -8,7 +8,8 @@
 
 void Drv_Case_Init(hal_isr_callback_t callback );
 uint8_t Drv_Case_Get_State(void );
-
+void Drv_Com_Set_Tx_High(void );
+void Drv_Com_Set_Tx_Low(void );
 
 #endif 
 

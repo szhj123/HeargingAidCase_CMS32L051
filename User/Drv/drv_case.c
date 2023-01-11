@@ -34,4 +34,13 @@ uint8_t Drv_Case_Get_State(void )
     }
 }
 
+void Drv_Com_Set_Tx_High(void )
+{
+    Hal_Com_Set_Gpio_High();
+}
+
+void Drv_Com_Set_Tx_Low(void )
+{
+    Hal_Com_Set_Gpio_Low();
+}
 

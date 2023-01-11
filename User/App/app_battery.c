@@ -29,6 +29,8 @@ void App_Batt_Init(void )
 {
     Drv_Batt_Init();
 
+    Drv_Batt_Boost_On();
+
     battPara.battVol = Drv_Batt_Get_Vol();
 
     Drv_Usb_Regist_Callback(App_Usb_Plug_Handler);
@@ -376,5 +378,14 @@ uint8_t App_Usb_Get_State(void )
     return Drv_Usb_Get_State();
 }
 
+void App_Batt_Boost_On(void )
+{
+    Drv_Batt_Boost_On();
+}
+
+void App_Batt_Boost_Off(void )
+{
+    Drv_Batt_Boost_Off();
+}
 
 

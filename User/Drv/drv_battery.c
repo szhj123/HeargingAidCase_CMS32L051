@@ -49,6 +49,16 @@ uint16_t Drv_Earbud_Get_Cur(void )
     return (uint16_t )((uint32_t )ADC_REF_VOL * adcCurVal / adcRefVal);
 }
 
+void Drv_Batt_Boost_On(void )
+{
+    Hal_Batt_Boost_On();
+}
+
+void Drv_Batt_Boost_Off(void )
+{
+    Hal_Batt_Boost_Off();
+}
+
 uint8_t Drv_Usb_Get_State(void )
 {
     uint8_t ret;

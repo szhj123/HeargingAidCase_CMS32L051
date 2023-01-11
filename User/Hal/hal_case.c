@@ -32,6 +32,16 @@ uint8_t Hal_Hall_Get_State(void )
     return PORT_GetBit(PORT13, PIN6);
 }
 
+void Hal_Com_Set_Gpio_High(void )
+{
+    PORT_SetBit(PORT1, PIN2);
+}
+
+void Hal_Com_Set_Gpio_Low(void )
+{
+    PORT_ClrBit(PORT1, PIN2);
+}
+
 void Hal_Hall_Isr_Handler(void )
 {
     if(hall_isr_callback != NULL)
